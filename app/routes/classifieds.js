@@ -8,7 +8,7 @@ const router = express.Router();
 
 router.get('/:id?', (req, res, next) => {
   if (req.params.id) {
-    knex.select('id', 'title', 'description', 'price', 'item_image')
+    knex.select()
       .from('classifieds')
       .where('id', req.params.id)
       .then(result => {
@@ -18,7 +18,7 @@ router.get('/:id?', (req, res, next) => {
         console.log(err);
       })
   } else {
-    knex.select('id', 'title', 'description', 'price', 'item_image')
+    knex.select()
     .from('classifieds')
     .then(results => {
       res.send(results);
@@ -31,7 +31,7 @@ router.get('/:id?', (req, res, next) => {
 
 router.post('/', (req, res, next) => {
   knex('classifieds')
-    .insert(req.body, ['id', 'title', 'description', 'price', 'item_image'])
+    .insert(req.body, '*')
     .then(postedItem => {
       res.send(postedItem[0])
     })
@@ -42,7 +42,7 @@ router.post('/', (req, res, next) => {
 
 router.patch('/:id', (req, res, next) => {
   knex('classifieds')
-    .update(req.body, ['id', 'title', 'description', 'price', 'item_image'])
+    .update(req.body, '*')
     .where('id', req.params.id)
     .then(updatedItem => {
       res.send(updatedItem[0]);
@@ -67,8 +67,6 @@ router.delete('/:id', (req, res, next) => {
         .del()
         .where('id', req.params.id)
         .then(() => {
-          delete deletedItem.created_at;
-          delete deletedItem.updated_at;
           res.send(deletedItem);
         })
         .catch(err => {
