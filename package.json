@@ -7,7 +7,7 @@
     "start": "node ./app/server.js",
     "test": "mocha",
     "knex": "./app/knex",
-    "heroku-postbuild": "knex migrate:latest --knexfile ./ && knex seed:run --knexfild ./"
+    "heroku-postbuild": "knex migrate:latest && knex seed:run"
   },
   "keywords": [],
   "author": "",
