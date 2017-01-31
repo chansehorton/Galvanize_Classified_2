@@ -6,9 +6,9 @@
   "scripts": {
     "start": "node ./app/server.js",
     "test": "mocha",
+    "knex": "./app/knex",
     "heroku-prebuild": "knex migrate:rollback",
-    "heroku-postbuild": "knex migrate:latest && knex seed:run",
-    "knex": "./app/knex"
+    "heroku-postbuild": "knex migrate:latest && knex seed:run"
   },
   "keywords": [],
   "author": "",
