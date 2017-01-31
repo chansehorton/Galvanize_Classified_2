@@ -7,7 +7,7 @@ const path = require('path');
 const port = process.env.PORT || 3000;
 const bodyParser = require('body-parser');
 
-const messages = require('./routes/classifieds');
+const messages = require('./app/routes/classifieds');
 
 app.use(express.static(path.join(__dirname, 'public')));
 

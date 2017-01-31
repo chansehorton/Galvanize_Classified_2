@@ -19,6 +19,5 @@ module.exports = {
     seeds: {
       directory: __dirname + '/app/seeds'
     }
-
   }
 };
