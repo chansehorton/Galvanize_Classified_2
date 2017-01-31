@@ -1,0 +1,20 @@
+<form novalidate name="newPostForm" ng-submit="$ctrl.createNewPost()">
+  <div>
+
+    <label for="title">Title</label>
+    <input id="title" type="text" ng-model="$ctrl.newPost.title" required>
+
+    <label for="description">Description</label>
+    <textarea id="description" ng-model="$ctrl.newPost.description" required></textarea>
+
+    <label for="price">Price</label>
+    <input id="price" type="number" ng-model="$ctrl.newPost.price" required>
+
+    <label for="item_image">Image URL</label>
+    <input id="item_image" type="text" ng-model="$ctrl.newPost.item_image" required>
+
+    <button type="submit" ng-disabled="newPostForm.$invalid">
+      <span>{{ $ctrl.editFlag ? "Update Post" : "Create Post" }}</span>
+    </button>
+  </div>
+</form>

@@ -1,4 +1,12 @@
 <div>
-  <div>
+
+  <span><label>Search: <input type="text" ng-model="searchText"></label> || <button ng-click="$ctrl.sortVal = 'title'">Sort By Title </button> || <button ng-click="$ctrl.sortVal = 'price'">Sort By Date</button> || <button ng-model="$ctrl.formVisible" ng-click="$ctrl.toggleFormVis()">Post New Advertisement</button></span>
+
+  <ad-form edit-flag="false" form-visible="$ctrl.formVisible" ng-if="$ctrl.formVisible"></ad-form>
+
+  <hr>
+  <div ng-repeat="item in $ctrl.currentAdverts | filter:searchText | orderBy:$ctrl.sortVal">
+    <advert ad="item"></advert>
   </div>
+
 </div>

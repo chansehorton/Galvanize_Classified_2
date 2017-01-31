@@ -7,9 +7,33 @@
       templateUrl: '/js/main/main.template.html'
     });
 
-    function MainCtrlr(){
+    MainCtrlr.$inject = ['advertSvc']
+
+    function MainCtrlr(advertSvc){
       const vm = this;
 
+
+      vm.$onInit = function() {
+
+        vm.sortVal='title';
+        vm.formVisible = false;
+
+        advertSvc.getAllAdverts()
+          .then(() => {
+            return vm.currentAdverts = advertSvc.advertArray;
+          })
+          .catch(err => {
+            console.log(err);
+          });
+      }
+
+      vm.toggleFormVis = function() {
+        if (vm.formVisible === true) {
+          vm.formVisible = false
+        } else {
+          vm.formVisible = true
+        }
+      }
     }
 
 }());

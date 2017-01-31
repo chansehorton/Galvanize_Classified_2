@@ -1,0 +1,12 @@
+<div>
+  <hr>
+  <div>
+    <button ng-click="$ctrl.toggleFormVis()">Edit</button>
+    <button ng-click="$ctrl.deleteThisPost()">Delete</button>
+    <ad-form edit-flag="true" form-visible="$ctrl.formVisible" advert="$ctrl.ad"  ng-if="$ctrl.formVisible"></ad-form>
+  </div>
+  <p>{{ $ctrl.ad.title }}</p>
+  <p>{{ $ctrl.ad.description }}</p>
+  <p>{{ $ctrl.ad.price }}</p>
+  <img src="{{ $ctrl.ad.item_image }}" alt="Picture of {{ $ctrl.ad.title }}">
+</div>

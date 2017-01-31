@@ -1,6 +1,6 @@
 'use strict';
 
-var pg = require('pg');
+const pg = require('pg');
 pg.types.setTypeParser(1700, 'text', parseInt);
 
 const environment = process.env.NODE_ENV || 'development';
