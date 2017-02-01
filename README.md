@@ -2,6 +2,8 @@
 
 ## Read the entire README before beginning. Commit often.
 
+##CDH - Heroku link: https://enigmatic-cliffs-14702.herokuapp.com/
+
 ## Project Description
 
 This is a simple Angular front end for your Galvanize Classified API.  **Part 3 will involve styling, so keep it as simple as possible.  We want to evaluate the Angular skills outside of styling.**
@@ -28,4 +30,3 @@ The app should do the following:
 - Delete an ad
 - Filter ads (titles and descriptions)
 - Sort ads based on posting date and price
-
